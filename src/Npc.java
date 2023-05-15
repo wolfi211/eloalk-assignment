@@ -4,11 +4,6 @@ public class Npc {
   private final Dice dice;
   private int position;
 
-  public Npc(char playingPiece, Dice dice) {
-    this.playingPiece = playingPiece;
-    this.dice = dice;
-  }
-
   public Npc(char playingPiece, int diceSide) {
     this.playingPiece = playingPiece;
     this.dice = new Dice(diceSide);
@@ -25,6 +20,10 @@ public class Npc {
 
   public String printHealth() {
     return playingPiece + ":" + hitPoints;
+  }
+
+  public int getHitPoints() {
+    return hitPoints;
   }
 
   public void setPosition(int position) {
