@@ -31,6 +31,10 @@ public class Npc {
     this.position = position;
   }
 
+  public int getPosition() {
+    return position;
+  }
+
   public void move() {
     int diceThrow = dice.throwDice();
     switch (diceThrow) {
@@ -41,5 +45,9 @@ public class Npc {
       //To-Do: throw new UnexpectedMoveException
       }
     }
+  }
+
+  public String print() {
+    return String.valueOf(playingPiece);
   }
 }
