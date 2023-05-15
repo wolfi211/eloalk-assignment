@@ -75,10 +75,7 @@ public class GameController {
     }
 
     private boolean isFinished() {
-        if(wizard.getHitPoints() <= 0 || fighter.getHitPoints() <= 0) {
-            return true;
-        }
-        return false;
+        return wizard.getHitPoints() <= 0 || fighter.getHitPoints() <= 0;
     }
 
     private String declareWinner() {
