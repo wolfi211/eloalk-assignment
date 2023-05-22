@@ -11,7 +11,7 @@ public class Npc {
   }
 
   public void takeDamage(int damage) {
-    hitPoints -= damage;
+    hitPoints = Math.max(hitPoints - damage, 0);
   }
 
   public int giveDamage() {
