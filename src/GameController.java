@@ -2,15 +2,18 @@ public class GameController {
     private final int BOARD_SIZE = 3; //with another move solution in Npc this can be changed
     private final Npc wizard;
     private final Npc fighter;
+    private String board;
 
     public GameController() {
         this.wizard = new Npc('V', 6);
         this.fighter = new Npc('H', 6);
+        updateBoard();
     }
 
     public void makeTurn() {
         wizard.move();
         fighter.move();
+        updateBoard();
 
         if(isBattle()) {
             battle();
@@ -31,7 +34,7 @@ public class GameController {
         fighter.setPosition(0);
     }
 
-    private String getBoard(){
+    private void updateBoard(){
         StringBuilder board = new StringBuilder();
         for(int i = 0; i < BOARD_SIZE; i++) {
             if(wizard.getPosition() == i && wizard.getPosition() == fighter.getPosition()) {
@@ -44,11 +47,11 @@ public class GameController {
                 board.append('_');
             }
         }
-        return board.toString();
+        this.board = board.toString();
     }
 
     public String getGameStatus() {
-        String status = getBoard() +
+        String status = board +
                 " --> ";
         if(isBattle()) {
             status += "harc: ";
@@ -60,8 +63,7 @@ public class GameController {
     }
 
     private boolean isBattle(){
-        String status = getBoard();
-        for (char field: status.toCharArray()) {
+        for (char field: board.toCharArray()) {
             if(field == 'X') {
                 return true;
             }
