@@ -2,6 +2,9 @@
 
 V4CRMW - Wolf Daniel - Beadando feladat Elosztott Alkalmazasokra
 
+A main metodus az AssignmentWindow.java fajlban talalhato, azt kell futtatni.
+A projekt Java 17-en keszult.
+
 # Leadás:
 
 Az alapfeladat elkészítése után a feladatot folyamatosan kell bővíteni az órai tanulmányokkal! Minden kiegészítést a 

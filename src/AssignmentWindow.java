@@ -1,4 +1,3 @@
-import javax.sound.sampled.Line;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -60,9 +59,7 @@ public class AssignmentWindow extends JFrame {
         nextCycleButton.addActionListener(this::nextCycleButtonListener);
         this.add(nextCycleButton);
 
-        timer = new Timer(500, event -> {
-            updateLabels();
-        });
+        timer = new Timer(500, event -> updateLabels());
     }
 
     private void nextCycleButtonListener(ActionEvent e) {

@@ -1,5 +1,4 @@
 public class GameController extends Thread{
-    private final int BOARD_SIZE = 3; //with another move solution in Npc this can be changed
     private final Npc wizard;
     private final Npc fighter;
     private String board;
@@ -47,6 +46,7 @@ public class GameController extends Thread{
 
     private void updateBoard(){
         StringBuilder board = new StringBuilder();
+        int BOARD_SIZE = 3;
         for(int i = 0; i < BOARD_SIZE; i++) {
             if(wizard.getPosition() == i && wizard.compareTo(fighter) == 0) {
                 board.append('X');
